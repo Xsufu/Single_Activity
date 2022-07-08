@@ -23,11 +23,6 @@ class ContactDetails : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-
     /*fun bind(item: Contact) {
         binding.name.text = item.firstName
         binding.surname.text = item.lastName
