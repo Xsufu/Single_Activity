@@ -28,7 +28,7 @@ class ContactCardAdapter(): RecyclerView.Adapter<ContactCardAdapter.ContactCardV
         holder.binding.contactPhoto.setImageResource(item.avatarResourceId)
 
         holder.itemView.setOnClickListener {
-
+            // TODO: Написать действие при нажатии на элемент списка
         }
     }
 
