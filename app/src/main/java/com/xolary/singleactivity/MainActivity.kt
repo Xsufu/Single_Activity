@@ -2,7 +2,6 @@ package com.xolary.singleactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.xolary.singleactivity.databinding.ActivityMainBinding

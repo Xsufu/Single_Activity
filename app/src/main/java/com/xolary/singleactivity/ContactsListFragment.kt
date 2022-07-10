@@ -39,7 +39,10 @@ class ContactsListFragment : Fragment() {
 
     private val listener = ContactCardAdapter.OnClickListener { contact, fullName ->
         findNavController().navigate(
-            ContactsListFragmentDirections.actionContactsListFragmentToContactDetails(contact, fullName)
+            ContactsListFragmentDirections.actionContactsListFragmentToContactDetails(
+                contact,
+                fullName
+            )
         )
     }
 }

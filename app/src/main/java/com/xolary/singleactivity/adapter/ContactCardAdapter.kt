@@ -8,7 +8,8 @@ import com.xolary.singleactivity.data.DataSource
 import com.xolary.singleactivity.databinding.ContactsListContactBinding
 
 
-class ContactCardAdapter(private val onClickLister: OnClickListener): RecyclerView.Adapter<ContactCardAdapter.ContactCardViewHolder>() {
+class ContactCardAdapter(private val onClickLister: OnClickListener) :
+    RecyclerView.Adapter<ContactCardAdapter.ContactCardViewHolder>() {
 
     private val dataset = DataSource.contacts
 
@@ -27,21 +28,21 @@ class ContactCardAdapter(private val onClickLister: OnClickListener): RecyclerVi
         val item = dataset[position]
         holder.bind(item)
         val fullName = item.firstName + " " + item.lastName
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             onClickLister.clickListener(item, fullName)
         }
     }
 
-    class ContactCardViewHolder(private var binding: ContactsListContactBinding):
+    class ContactCardViewHolder(private var binding: ContactsListContactBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(item: Contact) {
-                val fullName = item.firstName + " " + item.lastName
-                binding.apply {
-                    contactName.text = fullName
-                    contactPhoto.setImageResource(item.avatarResourceId)
-                }
+        fun bind(item: Contact) {
+            val fullName = item.firstName + " " + item.lastName
+            binding.apply {
+                contactName.text = fullName
+                contactPhoto.setImageResource(item.avatarResourceId)
             }
+        }
     }
 
     override fun getItemCount() = dataset.size
