@@ -17,6 +17,13 @@
     <fragment
         android:id="@+id/contact_details"
         android:name="com.xolary.singleactivity.ContactDetails"
-        android:label="contact_details_fragment"
-        tools:layout="@layout/contact_details_fragment" />
+        android:label="{title}"
+        tools:layout="@layout/contact_details_fragment" >
+        <argument
+            android:name="contactsArgs"
+            app:argType="com.xolary.singleactivity.data.Contact" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>
