@@ -1,18 +1,18 @@
 package com.xolary.singleactivity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.xolary.singleactivity.adapter.ContactCardAdapter
+import androidx.navigation.fragment.navArgs
+import com.xolary.singleactivity.data.Contact
 import com.xolary.singleactivity.databinding.ContactDetailsFragmentBinding
 
 class ContactDetails : Fragment() {
 
     private lateinit var binding: ContactDetailsFragmentBinding
-    private lateinit var adapter: ContactCardAdapter
+    private val contactArg: ContactDetailsArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,10 +23,14 @@ class ContactDetails : Fragment() {
         return binding.root
     }
 
-    /*fun bind(item: Contact) {
-        binding.name.text = item.firstName
-        binding.surname.text = item.lastName
-        binding.detailsContactPhoto.setImageResource(item.avatarResourceId)
-    }*/
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        val contact: Contact = contactArg.contactsArgs
+        binding.apply {
+            name.text = contact.firstName
+            surname.text = contact.lastName
+            detailsContactPhoto.setImageResource(contact.avatarResourceId)
+        }
+    }
 }
