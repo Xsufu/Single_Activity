@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xolary.singleactivity.adapter.ContactCardAdapter
-import com.xolary.singleactivity.data.Contact
-import com.xolary.singleactivity.data.DataSource
 import com.xolary.singleactivity.databinding.ContactsListFragmentBinding
 
 class ContactsListFragment : Fragment() {
