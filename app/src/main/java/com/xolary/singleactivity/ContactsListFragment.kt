@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xolary.singleactivity.adapter.ContactCardAdapter
@@ -32,10 +33,13 @@ class ContactsListFragment : Fragment() {
     }
 
     private fun updateUI() {
-//        val contacts = DataSource.contacts
-        adapter = ContactCardAdapter()
+        adapter = ContactCardAdapter(listener)
         contactsRecyclerView.adapter = adapter
     }
 
-
+    private val listener = ContactCardAdapter.OnClickListener { contact, fullName ->
+        findNavController().navigate(
+            ContactsListFragmentDirections.actionContactsListFragmentToContactDetails(contact, fullName)
+        )
+    }
 }
